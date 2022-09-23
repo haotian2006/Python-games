@@ -17,8 +17,8 @@ if True:# Change this to True To Emable it
     print("then it runs loop again")
 class CreateGame():
     #settings
-    speed = 10
-    visulize = False
+    speed = #tutle speed
+    visulize = False #show tutle
     #attributes
     placed = {}
     screen = ""
