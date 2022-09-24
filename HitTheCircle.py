@@ -4,13 +4,13 @@ import random
 import math
 def clamp(num, min_value, max_value):
     return max(min(num, max_value), min_value)
-class HitTheDot():
-    Rate = 0.1
-    RadiusSize = 20
-    Color = "red" 
-    GridRangex = [-150,150]
-    GridRangey = [-50,100]
-    MaxTime = 24
+class HitTheCircle():
+    Rate = 1 #How much circles will spawn per second
+    RadiusSize = 20 #circle radius
+    Color = "red" #circle color
+    GridRangex = [-150,150] # x range
+    GridRangey = [-50,100] # y range
+    MaxTime = 24 #how much time
     MaxTime = clamp(MaxTime,1,24)
     #Not Reccomened to edit these
     Speed = 10
