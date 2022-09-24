@@ -118,4 +118,4 @@ class HitTheCircle():
         TimeUp.write(str(self.Score)+" Score",font=style,align='center')   
         exit()
     
-HitTheDot().StartGame()
+HitTheCircle().StartGame()
