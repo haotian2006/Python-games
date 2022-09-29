@@ -12,6 +12,7 @@ print("It Is also reccomended to use an ide for this")
 #if your not placing any flags then you might have ran out, you can check the ammount you have left in the bottem right corner
 #If you have used all flags and you didn't win then you most likly have a flag on a tile thats not a bomb
 #also mines only spawn in full Squars
+#also if you are using a ide thats not runestone you can change length to a number divisable by 50
 #Have Fun - hao
 class createtext():
     #Simple text Module Created by hao
@@ -37,7 +38,8 @@ class createtext():
 class MineSweeper():
     #Settings
     gridsize = 50
-    startend = [int(-200+gridsize/2),int(200-gridsize/2)]
+    length = 200
+    startend = [int(-length+gridsize/2),int(length-gridsize/2)]
     ShowTurtles = False
     BgColor = "Lime"
     indexcolor = ["White","Black","Blue","Yellow","Red"]
