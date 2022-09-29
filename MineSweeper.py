@@ -144,14 +144,14 @@ class MineSweeper():
         self.MainTurtle.color("grey")
         for x in range(self.startend[0],self.startend[1]+1,self.gridsize):
             self.MainTurtle.up()
-            self.MainTurtle.goto(x,200)
+            self.MainTurtle.goto(x,self.length)
             self.MainTurtle.down()
-            self.MainTurtle.goto(x,-200)
+            self.MainTurtle.goto(x,-self.length)
         for y in range(self.startend[0],self.startend[1]+1,self.gridsize):
             self.MainTurtle.up()
-            self.MainTurtle.goto(200,y)
+            self.MainTurtle.goto(self.length,y)
             self.MainTurtle.down()
-            self.MainTurtle.goto(-200,y)
+            self.MainTurtle.goto(-self.length,y)
     def Start(self):
         self.MainTurtle.speed(200)
         if not self.ShowTurtles:
