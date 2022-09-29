@@ -3,6 +3,7 @@ import math
 import random  
 import time
 print("Made By Hao")
+print("It Is also reccomended to use an ide for this")
 class createtext():
     #Simple text Module Created by hao
     def __init__(self):
