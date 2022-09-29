@@ -119,3 +119,4 @@ class HitTheCircle():
         exit()
     
 HitTheCircle().StartGame()
+time.sleep(999999)
