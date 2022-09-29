@@ -254,6 +254,13 @@ class CreateGame():
         
 newgame = CreateGame()
 newgame.StartGame()
-task.sleep(999999)
-#newgame.AskForPos(1)
+exitout = False
+def endexit():
+    exitout= True
+    exit()
+turtle.onkey(endexit,"Escape")
+for i in range(99999):
+    if exitout:
+        break
+    time.sleep(1)
 
