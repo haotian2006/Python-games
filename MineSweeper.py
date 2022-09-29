@@ -42,6 +42,7 @@ class MineSweeper():
     startend = [int(-length+gridsize/2),int(length-gridsize/2)]
     ShowTurtles = False
     BgColor = "Lime"
+    checked = {}
     indexcolor = ["White","Black","Blue","Yellow","Red"]
     FlagModeKey = "f"
     #minessettings
@@ -50,6 +51,7 @@ class MineSweeper():
     ShowMines = False
     #attributes
     flagmodebool = False
+    currentlyplacing = False
     mines = {}
     flags = {}
     MineText = createtext()
@@ -57,7 +59,6 @@ class MineSweeper():
     flagmodetext = createtext()
     flagmodetext.set(('Arial', 12),"right","Black")
     Screen = turtle.Screen()
-    Screen.bgcolor(BgColor)
     MainTurtle = turtle.Turtle()
     GameEnded = False
     def combinevector2(self,x,y):
@@ -120,15 +121,21 @@ class MineSweeper():
     def FlagMode(self):
         self.flagmodebool = not self.flagmodebool
         self.flagmodetext.setext("Flag Mode: "+str(self.flagmodebool))
-    def OnClick(self,x,y):
-        if self.GameEnded:
-            return
+    def Drawtext(self,x,y):
         x,y = self.roundtogrid(x,y)
         self.MainTurtle.up()
+        self.MainTurtle.goto(x,y)
         nearmines = self.checknearby(x,y)
         colora = self.indexcolor[nearmines] if nearmines<len(self.indexcolor) else "Purple"
         self.MainTurtle.color(colora)
         style = ('Arial', 15)
+        self.MainTurtle.write(str(nearmines),font=style,align='center')
+    def OnClick(self,x,y):
+        if self.GameEnded or self.currentlyplacing :
+            return
+        self.MainTurtle.up()        
+        x,y = self.roundtogrid(x,y)
+        nearmines = self.checknearby(x,y)
         self.MainTurtle.goto(x,y)
         if self.flagmodebool:          
             self.DrawFlag(x,y)
@@ -139,7 +146,9 @@ class MineSweeper():
             return
         if self.combinevector2(x,y) in self.mines:
             self.endgame(False)
-        self.MainTurtle.write(str(nearmines),font=style,align='center')
+        self.Drawtext(x,y)
+        if int(nearmines) == 0:
+            self.showallclearplots(x,y)
     def Grid(self):
         self.MainTurtle.color("grey")
         for x in range(self.startend[0],self.startend[1]+1,self.gridsize):
@@ -152,7 +161,32 @@ class MineSweeper():
             self.MainTurtle.goto(self.length,y)
             self.MainTurtle.down()
             self.MainTurtle.goto(-self.length,y)
+    def checksmt(self,x,y):
+        startend = self.startend[1] +self.gridsize
+        for cx in range(x-50,x+50+1,50):
+            if abs(cx) > startend:
+                continue
+            for cy in range(y-50,y+50+1,50):
+                if abs(cy) > startend:
+                    continue
+                if self.combinevector2(cx,cy) in self.checked:
+                    continue
+                else:
+                    self.checked[self.combinevector2(cx,cy)] = True
+                near = self.checknearby(cx,cy)
+                if int(near) == 0 :
+                    self.Drawtext(cx,cy)
+                    self.checksmt(cx,cy)
+                else:
+                    self.Drawtext(cx,cy)
+         
+    def showallclearplots(self,x,y):
+        self.currentlyplacing = True
+        self.checksmt(x,y)
+        self.currentlyplacing = False
     def Start(self):
+        self.Screen.setup(self.length*2+self.gridsize,self.length*2+self.gridsize)
+        self.Screen.bgcolor(self.BgColor)
         self.MainTurtle.speed(200)
         if not self.ShowTurtles:
             self.MainTurtle.hideturtle()
