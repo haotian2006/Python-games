@@ -13,7 +13,7 @@ print("Fun Fact: Did you know that every flag you placed is its own separate tur
 #if your not placing any flags then you might have ran out, you can check the ammount you have left in the bottem right corner
 #If you have used all flags and you didn't win then you most likly have a flag on a tile thats not a bomb
 #also mines only spawn in full Squars
-#also if you are using a ide thats not runestone you can change length to a number divisable by 50
+#also if you are using a ide thats not runestone you can change length to a number divisible by 50
 #Have Fun - hao
 class createtext():
     #Simple text Module Created by hao
