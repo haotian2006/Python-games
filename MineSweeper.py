@@ -157,8 +157,8 @@ class MineSweeper():
         if not self.ShowTurtles:
             self.MainTurtle.hideturtle()
         self.Grid()
-        self.MineText.goto(200,-190)
-        self.flagmodetext.goto(200,185)
+        self.MineText.goto(self.length,-self.length)
+        self.flagmodetext.goto(self.length,self.length-15)
         stras = str(self.flagmodebool)
         self.flagmodetext.setext("Flag Mode: "+ stras)
         self.MineText.setext(str(self.Mines- len(self.flags))+" flags left")
