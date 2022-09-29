@@ -1,9 +1,8 @@
 import turtle as DrawingBorad
 import time as task
-#THIS WILL ONLY WORK IN RUNESTONE
 #0,0 = -75,75
 print("Created By Hao by using tutle as a drawing borad")
-if True:# Change this to True To Emable it
+if False:# Change this to True To Emable it
     print("How This Works:")
     print("Basicly how this works is first the CreateGame Class Is Called")
     print("Then the start game function/method is called which also calls CreateGrid")
@@ -255,5 +254,6 @@ class CreateGame():
         
 newgame = CreateGame()
 newgame.StartGame()
+task.sleep(999999)
 #newgame.AskForPos(1)
 
