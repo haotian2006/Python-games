@@ -4,6 +4,7 @@ import random
 import time
 print("Made By Hao")
 print("It Is also reccomended to use an ide for this")
+print("Fun Fact: Did you know that every flag you placed is its own separate turtle")
 #How to play
 #You can change Mines var in the MineSweeper Class to increase/decreese the amount of mines spawnned
 #To Start, you can click one of side boxs
