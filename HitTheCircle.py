@@ -11,7 +11,7 @@ class HitTheCircle():
     GridRangex = [-150,150] # x range
     GridRangey = [-50,100] # y range
     MaxTime = 24 #how much time
-    MaxTime = clamp(MaxTime,1,24)
+    MaxTime = clamp(MaxTime,1,9999)
     #Not Reccomened to edit these
     Speed = 10
     Score = 0
