@@ -124,6 +124,7 @@ def endexit():
     exitout= True
     exit()
 turtle.onkey(endexit,"Escape")
+turtle.mainloop()
 for i in range(99999):
     if exitout:
         break
