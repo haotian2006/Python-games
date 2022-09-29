@@ -4,6 +4,7 @@ import random
 import time
 print("Made By Hao")
 class createtext():
+    #Simple text Module Created by hao
     def __init__(self):
         self.style = "" 
         self.align = ""
