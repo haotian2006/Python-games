@@ -6,7 +6,7 @@ print("Made By Hao")
 print("It Is also reccomended to use an ide for this")
 #How to play
 #You can change Mines var in the MineSweeper Class to increase/decreese the amount of mines spawnned
-#you can click on the grid thats not fully made to start
+#To Start, you can click one of side boxs
 #to win you need to cover all mines with a flag
 #to place/remove a flag first switch to flag mode (f or FlagModeKey) and left click 
 #if your not placing any flags then you might have ran out, you can check the ammount you have left in the bottem right corner
