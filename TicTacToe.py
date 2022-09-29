@@ -256,12 +256,12 @@ newgame = CreateGame()
 newgame.StartGame()
 exitout = False
 def endexit():
-    exitout= True
+    global exitout
+    exitout = True
     exit()
 turtle.onkey(endexit,"Escape")
 turtle.mainloop()
 for i in range(99999):
     if exitout:
         break
-    time.sleep(1)
-
+    task.sleep(1)
