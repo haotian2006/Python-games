@@ -210,10 +210,10 @@ class MineSweeper():
         if Won:
             texa = "You Won"
             colour = "Green"
-        for index,value in self.mines.items():
-            self.DrawMine(value[0],value[1])
         texta.set(('Arial', 30),"center",colour)
         texta.setext(texa)
+        for index,value in self.mines.items():
+            self.DrawMine(value[0],value[1])
 MineSweeper().Start()
 exitout = False
 def endexit():
