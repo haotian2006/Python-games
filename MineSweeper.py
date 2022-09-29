@@ -35,7 +35,7 @@ class MineSweeper():
     FlagModeKey = "f"
     #minessettings
     MineColor = "Black"
-    Mines = 10
+    Mines = 10 #Max Mines
     ShowMines = False
     #attributes
     flagmodebool = False
