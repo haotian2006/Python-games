@@ -119,4 +119,12 @@ class HitTheCircle():
         exit()
     
 HitTheCircle().StartGame()
-time.sleep(999999)
+exitout = False
+def endexit():
+    exitout= True
+    exit()
+turtle.onkey(endexit,"Escape")
+for i in range(99999):
+    if exitout:
+        break
+    time.sleep(1)
