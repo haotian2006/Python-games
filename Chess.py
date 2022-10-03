@@ -391,6 +391,8 @@ class Chess:
         currentyindex = -125
         currentx = -175
         for classtype in self.SetUpW:
+            if classtype  == "N": 
+                continue
             Peice = self.abbreviation[classtype][1](1,self.abbreviation[classtype][0])
             Peice.Icon.setcolor(self.TeamColor[0])
             Peice.GoTo(currentx,currentyindex)
