@@ -1,4 +1,5 @@
 from copy import copy
+from http.client import CONTINUE
 import turtle
 import time
 cc = turtle.Turtle()
@@ -333,6 +334,8 @@ class Chess:
     }
     SetUpW = list("PPPPPPPPRHBQKBHR")
     SetUpB = list("RHBQKBHRPPPPPPPP")
+    #SetUpW = list("PPPPPPPPNNNNKNNN")
+    #SetUpB = list("NNNNKNNNPPPPPPPP")
     #<--Other-->
     gridlength = 200
     gridsize = 50
@@ -392,6 +395,10 @@ class Chess:
         currentx = -175
         for classtype in self.SetUpW:
             if classtype  == "N": 
+                currentx+=50
+                if currentx >175:
+                    currentx = -175
+                    currentyindex -= 50
                 continue
             Peice = self.abbreviation[classtype][1](1,self.abbreviation[classtype][0])
             Peice.Icon.setcolor(self.TeamColor[0])
@@ -404,6 +411,12 @@ class Chess:
         currentyindex = 175
         currentx = -175
         for classtype in self.SetUpB:
+            if classtype  == "N": 
+                currentx+=50
+                if currentx >175:
+                    currentx = -175
+                    currentyindex -= 50
+                continue
             Peice = self.abbreviation[classtype][1](-1,self.abbreviation[classtype][0])
             Peice.Icon.setcolor(self.TeamColor[1])
             Peice.GoTo(currentx,currentyindex)
