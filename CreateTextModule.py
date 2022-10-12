@@ -1,6 +1,10 @@
+import imp
+
+
 class createtext:
     #Simple text Module Created by hao
     def __init__(self):
+        import turtle
         self.style = "" 
         self.align = ""
         self.Text = ""

@@ -120,7 +120,7 @@ class HitTheCircle():
     
 HitTheCircle().StartGame()
 exitout = False
-def endexit():
+def endexit(): 
     global exitout
     exitout = True
     exit()
